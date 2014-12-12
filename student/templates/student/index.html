@@ -1,0 +1,12 @@
+{% load staticfiles %}
+
+<img src="{% static 'core/images/download.jpg' %}" />
+{% if student_list %}
+    <ul>
+    {% for s in student_list %}
+        <li><a href="/student/{{ s.id }}/">{{ s.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No students.</p>
+{% endif %}
